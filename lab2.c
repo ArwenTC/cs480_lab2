@@ -16,8 +16,8 @@ int main(int argc, char *argv[]) {
 	// List of commands to be run and their arguments
 	char *command[][3] = {
 		{"ls", "-l", NULL},
-		{"mkdir", "someDir", NULL},
-		{"touch", "someFile", NULL},
+		{"echo", "Hi there", NULL},
+		{"echo", "$PS1", NULL},
 		{"date", NULL, NULL},
 		{"history", "1", NULL},
 		{"echo", "Hello World", NULL},
