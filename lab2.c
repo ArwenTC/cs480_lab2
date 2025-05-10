@@ -16,12 +16,12 @@ int main(int argc, char *argv[]) {
 	// List of commands to be run and their arguments
 	char *command[][3] = {
 		{"ls", "-l", NULL},
-		{"echo", "Hi there", NULL},
-		{"echo", "there Hi", NULL},
+		{"mkdir", "someDir", NULL},
+		{"touch", "someFile", NULL},
 		{"date", NULL, NULL},
 		{"history", "1", NULL},
 		{"echo", "Hello World", NULL},
-		{"time", "date", NULL},
+		{"time", "echo", "Time Echo"},
 		{"echo", "Hello Matt", NULL},
 		{"echo", "goodbye", NULL},
 		{"ps", NULL, NULL}
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
 			execvp(command[i][0],command[i]);
 
 			// Only run the following if execvp fails.
-			perror("Command Failed");
+			perror("Command Failed.");
 			exit(EXIT_FAILURE);
 
 		} else if (process_id < 0) {
