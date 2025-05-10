@@ -17,11 +17,11 @@ int main(int argc, char *argv[]) {
 	char *command[][3] = {
 		{"ls", "-l", NULL},
 		{"echo", "Hi there", NULL},
-		{"echo", "$PS1", NULL},
+		{"echo", "there Hi", NULL},
 		{"date", NULL, NULL},
 		{"history", "1", NULL},
 		{"echo", "Hello World", NULL},
-		{"time", "echo", "Time Echo"},
+		{"time", "date", NULL},
 		{"echo", "Hello Matt", NULL},
 		{"echo", "goodbye", NULL},
 		{"ps", NULL, NULL}
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
 			execvp(command[i][0],command[i]);
 
 			// Only run the following if execvp fails.
-			perror("Command Failed.");
+			perror("Command Failed");
 			exit(EXIT_FAILURE);
 
 		} else if (process_id < 0) {
